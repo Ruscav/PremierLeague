@@ -1,0 +1,47 @@
+body{
+    background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+}
+
+.logo{
+    background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+    height: 3cm;
+
+} 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    color: white;
+}
+
+  h1 {
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    
+   
+  }
+
+  th, td {
+    border: 2px solid rgba(61,25,91,255);
+    padding: 8px;
+    text-align: left;
+  }
+  tr:hover {
+    background-color: rgba(61,25,91,255);
+  }
+  /*.tablerow{
+    box-shadow: -5px -5px 5px #000, 5px -5px 5px #000 ;
+  }
+  .tabledata{
+    box-shadow: -5px -5px 5px #000, 5px -5px 5px #000 ;
+  } */
+ .green-background{
+  background: rgba(0, 128, 0, 0.8) /* Green background with 60% opacity */
+ }
+ .orange-background{
+  background: rgba(239, 113, 9, 0.8)
+ }
