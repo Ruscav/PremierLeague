@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@300;400;500;600&family=Open+Sans:wght@300&family=Roboto&family=Tilt+Neon&display=swap');
+
+
 body{
     background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+    font-family: 'Lato', sans-serif !important;
+    font-family: 'Mukta', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Tilt Neon', sans-serif !important;
+    margin: 0px;
+    color: white;
 }
 
 .logo{
@@ -7,11 +17,6 @@ body{
     height: 3cm;
 
 } 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0px;
-    color: white;
-}
 
   h1 {
     text-align: center;
@@ -24,11 +29,15 @@ body {
     
    
   }
+  th{
+    font-size: x-large;
+  }
 
   th, td {
     border: 2px solid rgba(61,25,91,255);
     padding: 8px;
     text-align: left;
+    
   }
   tr:hover {
     background-color: rgba(61,25,91,255);
@@ -40,8 +49,21 @@ body {
     box-shadow: -5px -5px 5px #000, 5px -5px 5px #000 ;
   } */
  .green-background{
-  background: rgba(0, 128, 0, 0.8) /* Green background with 60% opacity */
+   background-image: url(UEFA_Champions_League.svg-removebg-preview.png);
+   background-size: 45%;
+   background-repeat: no-repeat;
+   background-position: center;
+   
+  
  }
  .orange-background{
-  background: rgba(239, 113, 9, 0.8)
+  background-image: url(Logo_UEFA_Europa_League_-_2021.svg-removebg-preview\ \(1\).png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
+ .brown-background{
+  background-color: red;
+  opacity: 0.9;
+  
  }

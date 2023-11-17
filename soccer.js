@@ -30,12 +30,16 @@ async function fetchData() {
     // Create a class string based on the condition
     const Greenbackground = isGreenBackground ? 'green-background' : '';
 
-    const isOrangeBackground = index = 4 || < 6 ;
+    const isOrangeBackground = index >= 4 && index < 5;
 
     const Orangebackground = isOrangeBackground ? 'orange-background' : '';
 
+    const isBrownbackground = index >=17 && index < 20 ;
+
+    const Brownbackground = isBrownbackground ? 'brown-background' : '';
+
     tr.innerHTML = `
-        <td class="${Greenbackground} ${Orangebackground}">${team.RANK}</td>
+        <td class="${Greenbackground} ${Orangebackground} ${Brownbackground}">${team.RANK}</td>
         <td><img src="${team.BADGE_SOURCE}" alt="Team Badge"/>
             ${team.TEAM_NAME}</td>
         <td>${team.TEAM_PLAYED}</td>
@@ -49,24 +53,6 @@ async function fetchData() {
     // Append the created row to your table
     // Replace 'yourTableId' with the actual ID of your table
     document.getElementById('league').appendChild(tr);
-});
-
-
-teams.forEach(team => {
-  const tr = document.createElement('tr')
-   tr.innerHTML= `
-        <td>${team.RANK}</td>
-        <td><img src="${team.BADGE_SOURCE}" alt="Team Badge"/>
-  ${team.TEAM_NAME}</td>
-        <td>${team.TEAM_PLAYED}</td>
-        <td>${team.WINS_INT}</td>
-        <td>${team.DRAWS_INT}</td>
-        <td>${team.LOSES_INT}</td>
-        <td>${team.GOAL_DIFFERENCE}</td>
-        <td>${team.POINTS_INT}</td>`
-
-
-  leaguetable.appendChild(tr);
 });
   
        for(let i = 0; i<teams.length; i++){
