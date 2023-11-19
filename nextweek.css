@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@300;400;500;600&family=Open+Sans:wght@300&family=Roboto&family=Tilt+Neon&display=swap');
 
+@media only screen and (min-width: 391px) and (max-width: 480px) {
+    .logo {
+     text-align: right;
+   
+    }
+    .container-fluid a {
+     float: none;
+     width: 100%;
+     font-size: small;
+     justify-content: flex-end;
+   
+   }
+   }
+
+   
 
 body{
     background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
@@ -19,7 +34,6 @@ body{
 
 .logo{
     background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
-    height: 3cm;
     justify-content: space-between;
 } 
 
