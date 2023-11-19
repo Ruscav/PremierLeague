@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@300;400;500;600&family=Open+Sans:wght@300&family=Roboto&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+        
+          <a class="navbar-brand nav-item nav-link" href="soccer.html">Home</a>
+        
+        </div>
+      </nav>
+    <h1>Results</h1>
+    <div id="events">
+      
+      
+
+
+    </div>
+    <script>
+      const url = 'https://livescore-sports.p.rapidapi.com/v1/competitions/details?timezone=0&competition_id=65&locale=EN';
+      const options = {
+          method: 'GET',
+          headers: {
+              'X-RapidAPI-Key': 'f6a3034595msha1c778a68d3a3dfp1e53b2jsn83e21bd3a2c5',
+              'X-RapidAPI-Host': 'livescore-sports.p.rapidapi.com'
+          }
+      };
+
+      // Wrap the code in an async function
+      async function fetchData() {
+          try {
+              const response = await fetch(url, options);
+              const result = await response.text();
+              const jsonData = JSON.parse(result);
+              
+              
+              const events = jsonData.DATA.STAGES[0].EVENTS;
+              console.log(events);
+              
+              const event = document.getElementById('events');
+              event.innerHTML = ''; // clear previous content
+
+              events.forEach((team) => {
+    const ul = document.createElement('ul');
+
+    // Check if the index is less than 4 (0-based index)
+    ul.innerHTML = `
+    <li><p>${team[0].AWAY_TEAM[0].NAME}</p><span>3</span><span>0</span><p>Fulham</p></li> 
+
+        `;
+
+    // Append the created row to your table
+    // Replace 'yourTableId' with the actual ID of your table
+    document.getElementById('events').appendChild(ul);
+});
+  
+
+
+
+          } catch (error) {
+              console.log(error);
+          }
+      }
+
+      // Call the fetchData function
+      fetchData();
+
+
+
+      
+
+  </script>
+</body>
+</html>

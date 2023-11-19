@@ -12,9 +12,14 @@ body{
     color: white;
 }
 
+.navbar {
+  text-decoration: underline;
+}
+
 .logo{
     background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
     height: 3cm;
+    justify-content: space-between;
 
 } 
 

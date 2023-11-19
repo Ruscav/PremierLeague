@@ -13,7 +13,7 @@ async function fetchData() {
 	  const result = await response.text();
 	  
 	  const jsonData = JSON.parse(result);
-  console.dir(jsonData);
+  // console.dir(jsonData);
   
   const teams = jsonData.DATA[0].LEAGUE_TABLE.L[0].TABLES[0].TEAM;
   console.log(teams)
@@ -47,28 +47,16 @@ async function fetchData() {
         <td>${team.DRAWS_INT}</td>
         <td>${team.LOSES_INT}</td>
         <td>${team.GOAL_DIFFERENCE}</td>
-        <td>${team.POINTS_INT}</td>
-    `;
+        <td>${team.POINTS_INT}</td>`;
 
     // Append the created row to your table
     // Replace 'yourTableId' with the actual ID of your table
     document.getElementById('league').appendChild(tr);
 });
   
-       for(let i = 0; i<teams.length; i++){
-      console.log(teams[i].RANK)
-      console.log(teams[i].TEAM_NAME)
-      console.log(teams[i].TEAM_PLAYED)
-      console.log(teams[i].WINS_INT)
-      console.log(teams[i].DRAWS_INT)
-      console.log(teams[i].LOSES_INT)
-      console.log(teams[i].GOAL_DIFFERENCE)
-      console.log(teams[i].POINTS_INT)
-      
-    }
-
+       
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 

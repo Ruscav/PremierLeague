@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@300;400;500;600&family=Open+Sans:wght@300&family=Roboto&family=Tilt+Neon&display=swap');
+
+
+body{
+    background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+    font-family: 'Lato', sans-serif !important;
+    font-family: 'Mukta', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Tilt Neon', sans-serif !important;
+    margin: 0px;
+    color: white;
+}
+
+.navbar {
+  text-decoration: underline;
+}
+
+.logo{
+    background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+    height: 3cm;
+    justify-content: space-between;
+} 
+
+li {
+    display: flex;
+
+}
+
+span {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+ 
