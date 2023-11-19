@@ -66,5 +66,11 @@ body{
  .brown-background{
   background-color: red;
   opacity: 0.9;
-  
  }
+ #topscorer{
+  margin-top: 3cm;
+  max-width: 50%;
+  background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+}
+
+ 
