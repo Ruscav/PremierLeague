@@ -14,7 +14,7 @@ body{
 
 .logo{
     background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
-    height: 3cm;
+    height:10rem;
 
 } 
 
@@ -68,9 +68,25 @@ body{
   opacity: 0.9;
  }
  #topscorer{
-  margin-top: 3cm;
-  max-width: 50%;
+  display: flex;
+  align-items: center;
   background-image: linear-gradient(to right, rgba(14,230,253,255), rgba(143,68,255,255)) ;
 }
+.topscorertable{
+    margin-right: 45px;
+    margin-bottom: 45px;
+    background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+}
+.assisttable{
+    background-image: linear-gradient(to left, rgba(14,230,253,255), rgba(143,68,255,255)) ;
+}
 
- 
+.Titel{
+color: rgba(61,25,91,255);
+}
+
+
+    
+
+
+
