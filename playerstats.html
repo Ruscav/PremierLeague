@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="playerstats.css">
     <link rel="stylesheet" href="soccer.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@300;400;500;600&family=Open+Sans:wght@300&family=Roboto&family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
@@ -35,40 +36,51 @@
             <li class="nav-item">
               <a class="nav-link" href="playerstats.html">Player Stats</a>
             </li>
-            
           </ul>
         </div>
       </div>
-      
     </nav>
     
   </div>
-  
-    <div>
-      <table id="league">
-        <thread>
-        <tr class="tablerow">
-          <th class="tabledata"><strong class="left">POS</strong></th>
-          <th class="tabledata"><strong class="left">TEAM</strong></th>
-          <th><strong>P</strong></th>
-          <th><strong>W</strong></th>
-          <th><strong>D</strong></th>
-          <th><strong>L</strong></th>
-          <th><strong>GD</strong></th>
-          <th><strong>PTS</strong></th>
-        </tr>
-      </thread>
-      <tbody id="leaguetable">
-
-      </tbody >
-      </table>
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div><h2><strong><span class="Titel">Topscorers</span></strong></h2></div>
+                <table class="topscorertable">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Goals</th>
+                      </tr>
+                    </thead>
+                    <tbody id="playerTableBody">
+                      <!-- Player information will be dynamically added here -->
+                    </tbody>
+                </table> <!-- Missing closing tag for the table -->
+            </div>
+            <div class="col-md-6">
+               <div class="Titel"><h2><strong><span class="Titel">Most Assists</span></strong></h2></div>
+                <table class="assisttable">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Assists</th>
+                      </tr>
+                    </thead>
+                    <tbody id="playerTableAssist">
+                      <!-- Player information will be dynamically added here -->
+                    </tbody>
+                </table> <!-- Missing closing tag for the table -->
+            </div>
+        </div>
     </div>
-
     
-   
-   
-    <footer><span id="date"></span> </footer>
+    <script src="playerstats.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="soccer.js"></script>
 </body>
 </html>

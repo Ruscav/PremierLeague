@@ -3,7 +3,7 @@ async function fetchData() {
 	const options = {
 	  method: 'GET',
 	  headers: {
-      'X-RapidAPI-Key': '10e8b3ce4cmsha17d5dd26508decp16cb62jsn570245539a1d',
+      'X-RapidAPI-Key': 'd97b0d217dmsh4dde714b53f5fbep107c9djsn111363212f9b',
       'X-RapidAPI-Host': 'livescore-sports.p.rapidapi.com'
 	  }
 	};
@@ -40,14 +40,27 @@ async function fetchData() {
 
     tr.innerHTML = `
         <td class="${Greenbackground} ${Orangebackground} ${Brownbackground}">${team.RANK}</td>
-        <td><img src="${team.BADGE_SOURCE}" alt="Team Badge"/>
-            ${team.TEAM_NAME}</td>
-        <td>${team.TEAM_PLAYED}</td>
-        <td>${team.WINS_INT}</td>
-        <td>${team.DRAWS_INT}</td>
-        <td>${team.LOSES_INT}</td>
-        <td>${team.GOAL_DIFFERENCE}</td>
-        <td>${team.POINTS_INT}</td>`;
+   
+
+    <td class="favorite-toggle-container">
+    <img src="${team.BADGE_SOURCE}" alt="Team Badge"/>
+    ${team.TEAM_NAME}
+    <label class="favorite-toggle-label">
+      <input type="radio" name="favoriteToggle" value="on" onclick="setFavoriteStatus('${team.TEAM_NAME}', true)">
+      Add Favie
+    </label>
+    <label class="favorite-toggle-label">
+      <input type="radio" name="favoriteToggle" value="off" onclick="setFavoriteStatus('${team.TEAM_NAME}', false)">
+      Out Favie
+    </label>
+  </td>
+
+  <td>${team.TEAM_PLAYED}</td>
+  <td>${team.WINS_INT}</td>
+  <td>${team.DRAWS_INT}</td>
+  <td>${team.LOSES_INT}</td>
+  <td>${team.GOAL_DIFFERENCE}</td>
+  <td>${team.POINTS_INT}</td>`;
 
     // Append the created row to your table
     // Replace 'yourTableId' with the actual ID of your table
@@ -61,3 +74,52 @@ async function fetchData() {
 }
 
 fetchData(); 
+
+function updateClock() {
+  const now = new Date();
+  const dateElement = document.getElementById('date');
+
+  
+  const date = now.toDateString();
+  
+
+  // Update HTML content
+  dateElement.textContent = date;
+ 
+}
+
+
+updateClock();
+// setInterval(updateClock, 1000); 
+
+
+function setFavoriteStatus(teamName, isFavorite) {
+  // Retrieve existing favorite teams from Local Storage
+  var favoriteTeams = JSON.parse(localStorage.getItem("favoriteTeams")) || [];
+
+  // Check if the team is already in favorites
+  var index = favoriteTeams.indexOf(teamName);
+
+  if (isFavorite) {
+    // If the radio button is set to "On" and the team is not in favorites, add it
+    if (index === -1) {
+      favoriteTeams.push(teamName);
+      alert(teamName + " added to favorites!");
+    } else {
+      // If the team is already in favorites, do nothing
+      alert(teamName + " is already in favorites!");
+    }
+  } else {
+    // If the radio button is set to "Off" and the team is in favorites, remove it
+    if (index !== -1) {
+      favoriteTeams.splice(index, 1);
+      alert(teamName + " removed from favorites!");
+    } else {
+      // If the team is not in favorites, do nothing
+      alert(teamName + " is not in favorites!");
+    }
+  }
+
+  // Save the updated list of favorite teams to Local Storage
+  localStorage.setItem("favoriteTeams", JSON.stringify(favoriteTeams));
+}

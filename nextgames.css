@@ -1,19 +1,18 @@
 
-
+   
+li {
+    display: flex;
+}
 th {
     font-size: x-large;
     background-color:rgba(61,25,91,255) ; 
+    color: white;
     text-align: center !important;
 }
 
-table {
+header {
     width: 100%;
-    text-align: center;
-}
-
-li {
-    display: flex;
-
+    
 }
 
 span {
@@ -22,7 +21,7 @@ span {
    
 }
 
-.results{
+.nextweek{
     display: grid;
     place-items: center;
 }
